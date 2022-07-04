@@ -1,5 +1,5 @@
 # UCSC-Academic-Major-Calculator
-A program for UCSC Advisors to calculate what majors students qualify for given the completed class history.
+A program for UCSC Advisors/Students to calculate what 2021-2022 majors students qualify for given the completed class history.
 
 Input: A file of all the classes that have been completed
 
