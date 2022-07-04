@@ -1,0 +1,22 @@
+{
+  "name": "ucsc-academic-major-calculator",
+  "version": "1.0.0",
+  "description": "A program for UCSC Advisors/Students to calculate what 2021-2022 majors students qualify for given the completed class history.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivalmart/UCSC-Academic-Major-Calculator.git"
+  },
+  "author": "Ivan Martinez-Arias",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivalmart/UCSC-Academic-Major-Calculator/issues"
+  },
+  "homepage": "https://github.com/ivalmart/UCSC-Academic-Major-Calculator#readme",
+  "dependencies": {
+    "package.json": "^2.0.1"
+  }
+}

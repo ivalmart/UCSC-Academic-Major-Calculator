@@ -1,39 +1,36 @@
-const fs = require('fs');
 
-try {
-    const data = fs.readFileSync('./data/courses.txt', 'utf8')
-    console.log(data)
-} catch (err) {
-    console.error(err)
-}
-
-function SearchBar() {
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myUL");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
-}
 
 function main() {
-    syncReadFile('./data/courses.txt');
-}
+    // Help from:
+    // https://stackoverflow.com/questions/13574930/how-to-load-a-text-file-in-javascript
+    var req = new XMLHttpRequest();
+    req.open('GET', './data/courses.txt');
+    req.onreadystatechange = function() {
+      if (req.readyState == 4) {
+        if (req.status == 200) {
+          var lines = req.responseText.split('\n');
+          lines.forEach(function(line, i) {
+            console.log("#", i, ": ", line);
+          });
+        } else {
+          // (something went wrong with the request)
+        }
+      }
+    }
+    
+    req.send();
 
-function syncReadFile(filename) {
-    let contents = readFileSync(filename, 'utf-8');
-  
-    const arr = contents.split(/\r?\n/);
-  
-    console.log(arr); // 👉️ ['One', 'Two', 'Three', 'Four']
-  
-    return arr;
-}
+    // https://stackoverflow.com/questions/14446447/how-to-read-a-local-text-file
+    // https://fetch.spec.whatwg.org/
+    // Fetch API Javascript
+
+    // var courseList = fetch('./data/courses.txt')
+    // .then(response => response.text())
+    // .then(text => {return text;});
+
+    // courseList.then(function(parse) {
+    //     console.log(parse.replaceAll('\r', '\n').split('\n'))
+    // })
+    // // console.log(courseList);
+
+}    
