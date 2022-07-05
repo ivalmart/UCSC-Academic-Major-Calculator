@@ -22,7 +22,7 @@ function main() {
         // stores all the courses for the website search bar list
         lines.forEach(function(line, i, arr) {
           // splices off some random \r that I have no way of doing but this way
-          arr[i] = line.slice(0, -1);
+          arr[i] = line;
           AddFilterListItem(arr[i]);
         });
       } else {
