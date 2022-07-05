@@ -60,6 +60,10 @@ function AddFilterListItem(item) {
   var ul = document.getElementById("unorderedList");
   var li = document.createElement("li");
   li.appendChild(a);
+  // https://stackoverflow.com/questions/53268641/how-to-delete-an-li-from-list-with-javascript
+  li.addEventListener('click', function() {
+    this.parentNode.removeChild(this);
+  })
   ul.appendChild(li);
 }
 
