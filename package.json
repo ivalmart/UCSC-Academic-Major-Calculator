@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/ivalmart/UCSC-Academic-Major-Calculator#readme",
   "dependencies": {
+    "line-reader": "^0.4.0",
+    "npm": "^8.13.2",
     "package.json": "^2.0.1"
   }
 }

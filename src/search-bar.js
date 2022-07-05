@@ -4,8 +4,8 @@ function main() {
   // [Key = Major, Value = All possible courses needed to declare]
   // https://pietschsoft.com/post/2015/09/05/javascript-basics-how-to-create-a-dictionary-with-keyvalue-pairs
   // https://stackoverflow.com/questions/7196212/how-to-create-dictionary-and-add-key-value-pairs-dynamically
-  var course_Dict = [];
-  
+  // course_Dict = [];
+  course_Dict = [];
 
   // A list of all courses in UCSC that are a part of any major declaration process
   var possible_Courses = {};
@@ -17,40 +17,51 @@ function main() {
   req.onreadystatechange = function() {
     if (req.readyState == 4) {
       if (req.status == 200) {
+        // lines variable contains all the courses in an array with each index with their own course
         var lines = req.responseText.split(/\n/);
         // stores all the courses for the website search bar list
-        lines.forEach(function(line, i, course_Dict) {
+        lines.forEach(function(line, i, arr) {
           // splices off some random \r that I have no way of doing but this way
-          course_Dict.push({
-            key: i,
-            value: line.slice(0, -1)
-          })
-          // course_Dict[i] = line.slice(0, -1);
+          arr[i] = line.slice(0, -1);
+          AddFilterListItem(arr[i]);
         });
       } else {
         // (something went wrong with the request)
       }
+      course_Dict = Array.from(lines);
     }
   }
-
   req.send();
+  // fetch('./data/courses.txt')
+  //   .then(response => response.json())
+  //   .then(data => console.log(data));
+    // console.log(course_Dict);
 
-  // test_Dict = {"one", "Two", "ThRee", "4"};
-  console.log(course_Dict);
 
-  var searchList = document.getElementById('unorderedList');
   // https://stackoverflow.com/questions/45193524/how-to-add-a-tag-and-href-using-javascript
-  for(i = 0; i < 3; i++) {
-    var a = document.createElement("a");
-    a.setAttribute('href', '#');
-    a.textContent = i;
+  // for(i = 0; i < 3; i++) {
+  //   var a = document.createElement("a");
+  //   a.setAttribute('href', '#');
+  //   a.textContent = i;
 
-    var ul = document.getElementById("unorderedList");
-    var li = document.createElement("li");
-    li.appendChild(a);
-    ul.appendChild(li);
-  }
+  //   var ul = document.getElementById("unorderedList");
+  //   var li = document.createElement("li");
+  //   li.appendChild(a);
+  //   ul.appendChild(li);
+  // }
 }    
+
+
+function AddFilterListItem(item) {
+  var a = document.createElement("a");
+  a.setAttribute('href', '#');
+  a.textContent = item;
+
+  var ul = document.getElementById("unorderedList");
+  var li = document.createElement("li");
+  li.appendChild(a);
+  ul.appendChild(li);
+}
 
 
 // https://www.w3schools.com/howto/howto_js_filter_lists.asp
