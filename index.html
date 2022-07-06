@@ -4,7 +4,8 @@
         <title>UCSC-Academic-Major-Calculator</title>
 
         <!-- Load Libraries -->
-        <!-- <script data-main="js/config" src="require-2.3.6.js"></script> -->
+
+
         <!-- Load Files -->
         <script src="src/search-bar.js"></script>
 
@@ -15,7 +16,21 @@
             A program for UCSC Advisors/Students to calculate what 2021-2022 majors students qualify for given the completed class history.
         </p>
 
+        <img class="background" src="./data/background.jpg" alt="rcc">
+
         <style>
+            img.background {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                z-index: -1;
+                width: 100%;
+                height: 100%;
+                -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+                filter: blur(5px);
+            }
+
+            
             /* https://stackoverflow.com/questions/21998679/css-how-to-make-scrollable-list */
             nav ul{height:400px; width:50%;}
             nav ul{overflow:hidden; overflow-y:scroll;}
@@ -23,14 +38,20 @@
             * {
             box-sizing: border-box;
             }
+
+            ul {
+                float: left;
+            }   
             
             #searchIcon {
-                /* background-image: url('/css/searchicon.png'); /*Add a search icon to input */
-                background-position: 10px 12px; /* Position the search icon */
+                background-image: url('./data/slugicon.png'); /*Add a search icon to input */
+                background-position: 1px 2px; /* Position the search icon */
+                background-size: 6%;
                 background-repeat: no-repeat; /* Do not repeat the icon image */
-                width: 50%; /* Full-width */
-                font-size: 16px; /* Increase font-size */
-                padding: 12px 20px 12px 40px; /* Add some padding */
+                width: 45%; /* Full-width */
+                font-size: 18px; /* Increase font-size */
+                margin-left: 25px;
+                padding: 12px 20px 12px 45px; /* Add some padding */
                 border: 1px solid #ddd; /* Add a grey border */
                 margin-bottom: 12px; /* Add some space below the input */
             }
@@ -38,33 +59,60 @@
             #filterList {
                 /* Remove default list styling */
                 list-style-type: none;
+                font-size: 20px;
                 padding: 0;
                 margin-top: 0;
-                margin-left: 50;
-                width: 40%;
+                margin-left: 50px;
+                width: 41%;
                 text-align: center;
             }
 
+            /* UC Colors: https://brand.universityofcalifornia.edu/guidelines/color.html#! */
             #filterList li a {
                 border: 1px solid #ddd; /* Add a border to all links */
                 margin-top: -1px; /* Prevent double borders */
-                background-color: #f6f6f6; /* Grey background color */
+                background-color: #1295d8; /* Grey background color */
                 padding: 8px; /* Add some padding */
                 text-decoration: none; /* Remove default text underline */
-                font-size: 25px; /* Increase the font-size */
-                color: black; /* Add a black text color */
+                -webkit-text-stroke: 1px black; /* Black outline around the font */
+                font-size: 30px; /* Increase the font-size */
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                color: #FFB511; /* Add a black text color */
+                font-weight: bold;
                 display: block; /* Make it into a block element to fill the whole list */
             }
 
             #filterList li a:hover:not(.header) {
-                background-color: #eee; /* Add a hover effect to all links, except for headers */
+                background-color: #72CDF4; /* Add a hover effect to all links, except for headers */
+                color: #FFE552;
             }
 
             #chosenList {
                 list-style-type: none;
-                padding: 0;
+                padding-left: 10%;
+                margin-left: 20%;
+                font-size: large;
+                text-align: center;
                 margin: 0;
                 width: 50%;
+            }
+
+            #chosenList li a {
+                border: 1px solid #ddd; /* Add a border to all links */
+                margin-top: -1px; /* Prevent double borders */
+                background-color: #FFB511; /* Grey background color */
+                padding: 8px; /* Add some padding */
+                text-decoration: none; /* Remove default text underline */
+                -webkit-text-stroke: 1px black; /* Black outline around the font */
+                font-size: 30px; /* Increase the font-size */
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                color: #1295d8; /* Add a black text color */
+                display: block; /* Make it into a block element to fill the whole list */
+            }
+
+            #chosenList li a:hover:not(.header) {
+                background-color: #FFE552; /* Add a hover effect to all links, except for headers */
+                color: #72CDF4;
             }
         </style>
         
@@ -86,13 +134,17 @@
         </nav>
 
         <!-- Chosen List -->
-        <ul id="chosenList">
-            <li><a href="#">Test</a></li>
-        </ul>
+        <nav>
+            <ul id="chosenList">
+                Courses You Have Chosen/Courses You Have Completed:
+            </ul>
+        </nav>
 
-        <!-- List of Majors Client can Follow/Declare -->
-        <ul id="majorList">
-            Majors You Qualify To Declare/Majors You Can Follow:
-        </ul>
+        <div>
+            <!-- List of Majors Client can Follow/Declare -->
+            <ul id="majorList">
+                Majors You Qualify To Declare/Majors You Can Follow:
+            </ul>
+            </div>
     </body>
 </html>

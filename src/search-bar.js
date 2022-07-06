@@ -62,8 +62,8 @@ function AddListItem(item, typeOfList) {
   li.appendChild(a);
   // https://stackoverflow.com/questions/53268641/how-to-delete-an-li-from-list-with-javascript
   li.addEventListener('click', function() {
-    if(typeOfList == "filterList") AddListItem(this.textContent, "majorList");
-    else if(typeOfList == "majorList") AddListItem(this.textContent, "filterList");
+    if(typeOfList == "filterList") AddListItem(this.textContent, "chosenList");
+    else if(typeOfList == "chosenList") AddListItem(this.textContent, "filterList");
 
     this.parentNode.removeChild(this);
   })

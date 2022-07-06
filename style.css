@@ -1,0 +1,53 @@
+/* https://stackoverflow.com/questions/21998679/css-how-to-make-scrollable-list */
+nav ul{height:400px; width:50%;}
+nav ul{overflow:hidden; overflow-y:scroll;}
+
+* {
+box-sizing: border-box;
+}
+
+
+
+#searchIcon {
+    background-image: url('./data/slugicon.png'); /*Add a search icon to input */
+    background-position: 0px 2px; /* Position the search icon */
+    background-size: 7%;
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 50%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+}
+
+#filterList {
+    /* Remove default list styling */
+    list-style-type: none;
+    padding: 0;
+    margin-top: 0;
+    margin-left: 50;
+    width: 40%;
+    text-align: center;
+}
+
+#filterList li a {
+    border: 1px solid #ddd; /* Add a border to all links */
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6; /* Grey background color */
+    padding: 8px; /* Add some padding */
+    text-decoration: none; /* Remove default text underline */
+    font-size: 25px; /* Increase the font-size */
+    color: black; /* Add a black text color */
+    display: block; /* Make it into a block element to fill the whole list */
+}
+
+#filterList li a:hover:not(.header) {
+    background-color: #eee; /* Add a hover effect to all links, except for headers */
+}
+
+#chosenList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 50%;
+}
