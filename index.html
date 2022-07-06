@@ -35,7 +35,7 @@
                 margin-bottom: 12px; /* Add some space below the input */
             }
 
-            #unorderedList {
+            #filterList {
                 /* Remove default list styling */
                 list-style-type: none;
                 padding: 0;
@@ -45,7 +45,7 @@
                 text-align: center;
             }
 
-            #unorderedList li a {
+            #filterList li a {
                 border: 1px solid #ddd; /* Add a border to all links */
                 margin-top: -1px; /* Prevent double borders */
                 background-color: #f6f6f6; /* Grey background color */
@@ -56,7 +56,7 @@
                 display: block; /* Make it into a block element to fill the whole list */
             }
 
-            #unorderedList li a:hover:not(.header) {
+            #filterList li a:hover:not(.header) {
                 background-color: #eee; /* Add a hover effect to all links, except for headers */
             }
 
@@ -72,7 +72,7 @@
         <input type="text" id="searchIcon" onkeyup="SearchBar()" placeholder="Search for courses.." title="Type in the abbreviation of the course">
 
         <nav>
-            <ul id="unorderedList">
+            <ul id="filterList">
                 <!-- <li><a href="#">Adele</a></li>
                 <li><a href="#">Agnes</a></li>
 
@@ -88,6 +88,11 @@
         <!-- Chosen List -->
         <ul id="chosenList">
             <li><a href="#">Test</a></li>
+        </ul>
+
+        <!-- List of Majors Client can Follow/Declare -->
+        <ul id="majorList">
+            Majors You Qualify To Declare/Majors You Can Follow:
         </ul>
     </body>
 </html>

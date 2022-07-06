@@ -23,7 +23,7 @@ function main() {
         lines.forEach(function(line, i, arr) {
           // splices off some random \r that I have no way of doing but this way
           arr[i] = line;
-          AddFilterListItem(arr[i]);
+          AddListItem(arr[i], "filterList");
         });
       } else {
         // (something went wrong with the request)
@@ -44,7 +44,7 @@ function main() {
   //   a.setAttribute('href', '#');
   //   a.textContent = i;
 
-  //   var ul = document.getElementById("unorderedList");
+  //   var ul = document.getElementById("filterList");
   //   var li = document.createElement("li");
   //   li.appendChild(a);
   //   ul.appendChild(li);
@@ -52,16 +52,19 @@ function main() {
 }    
 
 
-function AddFilterListItem(item) {
+function AddListItem(item, typeOfList) {
   var a = document.createElement("a");
   a.setAttribute('href', '#');
   a.textContent = item;
 
-  var ul = document.getElementById("unorderedList");
+  var ul = document.getElementById(typeOfList);
   var li = document.createElement("li");
   li.appendChild(a);
   // https://stackoverflow.com/questions/53268641/how-to-delete-an-li-from-list-with-javascript
   li.addEventListener('click', function() {
+    if(typeOfList == "filterList") AddListItem(this.textContent, "majorList");
+    else if(typeOfList == "majorList") AddListItem(this.textContent, "filterList");
+
     this.parentNode.removeChild(this);
   })
   ul.appendChild(li);
@@ -74,7 +77,7 @@ function SearchBar() {
   var input, filter, ul, li, a, i, txtValue;
   input = document.getElementById('searchIcon');
   filter = input.value.toUpperCase();
-  ul = document.getElementById("unorderedList");
+  ul = document.getElementById("filterList");
   li = ul.getElementsByTagName('li');
 
   // Loop through all list items, and hide those who don't match the search query
