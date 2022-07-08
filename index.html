@@ -4,10 +4,11 @@
         <title>UCSC-Academic-Major-Calculator</title>
 
         <!-- Load Libraries -->
-
+        <link href="./style.css" rel="stylesheet">
 
         <!-- Load Files -->
-        <script src="src/search-bar.js"></script>
+        <script src="./src/search-bar.js"></script>
+        <script src="./src/major-qualifiers.js"></script>
 
     </head>
     <body onload="main()">
@@ -32,8 +33,12 @@
 
             
             /* https://stackoverflow.com/questions/21998679/css-how-to-make-scrollable-list */
-            nav ul{height:400px; width:50%;}
-            nav ul{overflow:hidden; overflow-y:scroll;}
+            /* https://stackoverflow.com/questions/26322715/two-nav-elements-in-css */
+            nav[role="filtered"] ul{height:400px; width:50%;}
+            nav[role="filtered"] ul{overflow:hidden; overflow-y:scroll;}
+
+            nav[role="chose"] ul{height:343px; width:50%;}
+            nav[role="chose"] ul{overflow:hidden; overflow-y:scroll;}            
 
             * {
             box-sizing: border-box;
@@ -46,7 +51,7 @@
             #searchIcon {
                 background-image: url('./data/slugicon.png'); /*Add a search icon to input */
                 background-position: 1px 2px; /* Position the search icon */
-                background-size: 6%;
+                background-size: 40px;
                 background-repeat: no-repeat; /* Do not repeat the icon image */
                 width: 45%; /* Full-width */
                 font-size: 18px; /* Increase font-size */
@@ -91,7 +96,6 @@
                 list-style-type: none;
                 padding-left: 10%;
                 margin-left: 20%;
-                font-size: large;
                 text-align: center;
                 margin: 0;
                 width: 50%;
@@ -99,7 +103,7 @@
 
             #chosenList li a {
                 border: 1px solid #ddd; /* Add a border to all links */
-                margin-top: -1px; /* Prevent double borders */
+                margin-top: 0px; /* Prevent double borders */
                 background-color: #FFB511; /* Grey background color */
                 padding: 8px; /* Add some padding */
                 text-decoration: none; /* Remove default text underline */
@@ -119,32 +123,24 @@
         <!-- Search Filter List -->
         <input type="text" id="searchIcon" onkeyup="SearchBar()" placeholder="Search for courses.." title="Type in the abbreviation of the course">
 
-        <nav>
-            <ul id="filterList">
-                <!-- <li><a href="#">Adele</a></li>
-                <li><a href="#">Agnes</a></li>
-
-                <li><a href="#">Billy</a></li>
-                <li><a href="#">Bob</a></li>
-
-                <li><a href="#">Calvin</a></li>
-                <li><a href="#">Christina</a></li>
-                <li><a href="#">Cindy</a></li> -->
-            </ul>
+        <nav role="filtered">
+            <ul id="filterList"></ul>
         </nav>
 
         <!-- Chosen List -->
-        <nav>
+        <nav role="chose">
+            <p class="chosenTitle">Courses You Have Chosen/Courses You Have Completed:</p>
             <ul id="chosenList">
-                Courses You Have Chosen/Courses You Have Completed:
             </ul>
         </nav>
 
         <div>
             <!-- List of Majors Client can Follow/Declare -->
             <ul id="majorList">
-                Majors You Qualify To Declare/Majors You Can Follow:
+                <button class="button" onclick="CalculateMajorQualifiers()">Calculate Qualified Majors</button>
+                <p class="majorTitle">Majors You Qualify To Declare/Majors You Can Follow:</p>
+                <li>This major</li>
             </ul>
-            </div>
+        </div>
     </body>
 </html>
