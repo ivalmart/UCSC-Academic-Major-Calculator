@@ -13,7 +13,7 @@ function main() {
   // Help from:
   // https://stackoverflow.com/questions/13574930/how-to-load-a-text-file-in-javascript
   var req = new XMLHttpRequest();
-  req.open('GET', './data/courses.txt');
+  req.open('GET', './data/all-courses.txt');
   req.onreadystatechange = function() {
     if (req.readyState == 4) {
       if (req.status == 200) {
@@ -32,23 +32,6 @@ function main() {
     }
   }
   req.send();
-  // fetch('./data/courses.txt')
-  //   .then(response => response.json())
-  //   .then(data => console.log(data));
-    // console.log(course_Dict);
-
-
-  // https://stackoverflow.com/questions/45193524/how-to-add-a-tag-and-href-using-javascript
-  // for(i = 0; i < 3; i++) {
-  //   var a = document.createElement("a");
-  //   a.setAttribute('href', '#');
-  //   a.textContent = i;
-
-  //   var ul = document.getElementById("filterList");
-  //   var li = document.createElement("li");
-  //   li.appendChild(a);
-  //   ul.appendChild(li);
-  // }
 }    
 
 

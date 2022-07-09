@@ -7,6 +7,8 @@
         <link href="./style.css" rel="stylesheet">
 
         <!-- Load Files -->
+        <!-- <script type="module" src="crafting.json"></script> -->
+        <!-- <script src="./data/major-courses.json"></script> -->
         <script src="./src/search-bar.js"></script>
         <script src="./src/major-qualifiers.js"></script>
 
@@ -130,14 +132,14 @@
         <!-- Chosen List -->
         <nav role="chose">
             <p class="chosenTitle">Courses You Have Chosen/Courses You Have Completed:</p>
-            <ul id="chosenList">
-            </ul>
+            <!-- KEEP THIS COMPLETELY EMPTY, IT'S THE EDGE CASE WHERE IF THERE IS NOTHING IN THE LIST -->
+            <ul id="chosenList"></ul>
         </nav>
 
         <div>
             <!-- List of Majors Client can Follow/Declare -->
             <ul id="majorList">
-                <button class="button" onclick="CalculateMajorQualifiers()">Calculate Qualified Majors</button>
+                <button class="button" onclick="CalculateButton()">Calculate Qualified Majors</button>
                 <p class="majorTitle">Majors You Qualify To Declare/Majors You Can Follow:</p>
                 <li>This major</li>
             </ul>

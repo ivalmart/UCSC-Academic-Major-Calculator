@@ -1,0 +1,283 @@
+{
+    "Agroecology B.A.": [
+        "BIOE 20C",
+        "CHEM 1A",
+        "ENVS 23",
+        "ENVS 24",
+        "ENVS 25",
+        "ENVS 80F",
+        "STAT 7",
+        "STAT 7L"
+    ],
+    "Anthropology B.A.": [
+        "ANTH 1",
+        "ANTH 2",
+        "ANTH 3"
+    ],
+    "Applied Linguistics and Multilingualism B.A.": [
+        "ARBC 4",
+        "CHIN 4",
+        "FREN 4",
+        "GERM 4",
+        "ITAL 4",
+        "JAPN 4",
+        "PORT 65A",
+        "SPAN 4",
+        "SPHS 4"
+    ],
+    "Applied Mathematics B.S.": [
+        "AM 10",
+        "AM 20",
+        "AM 30",
+        "CSE 16",
+        "MATH 19A",
+        "MATH 19B",
+        "MATH 20A",
+        "MATH 20B",
+        "MATH 21",
+        "MATH 23A",
+        "MATH 23B",
+        "MATH 24"
+    ],
+    "Applied Physics B.S.": [
+        "PHYS 5A",
+        "PHYS 5B",
+        "PHYS 5C"
+    ],
+    "Art and Design: Games and Playable Media B.A.": [
+        "ARTG 80H",
+        "ARTG 80I",
+        "CMPM 80K",
+        "CSE 30"
+    ],
+    "Art B.A.": [
+        "ART 10D",
+        "ART 10E",
+        "ART 10F"
+    ],
+    "Biochemistry and Molecular Biology B.S.": [
+        "BIOL 20A",
+        "CHEM 1B",
+        "CHEM 1C",
+        "CHEM 8A",
+        "CHEM 8B",
+        "MATH 11A",
+        "MATH 19A"
+    ],
+    "Biology B.A.": [
+        "BIOE 20B",
+        "BIOE 20C",
+        "BIOL 20A",
+        "CHEM 1A",
+        "CHEM 1B"
+    ],
+    "Biology B.S.": [
+        "BIOE 20B",
+        "BIOL 102J",
+        "BIOL 107J",
+        "BIOL 20A",
+        "BIOL 20L",
+        "CHEM 1A",
+        "CHEM 1B",
+        "CHEM 1C",
+        "CHEM 8A",
+        "MATH 11A",
+        "MATH 19A"
+    ],
+    "Biomolecular Engineering and Bioinformatics B.S.": [
+        "CHEM 1A",
+        "CHEM 1B",
+        "CSE 13S",
+        "CSE 16",
+        "CSE 30",
+        "MATH 19B",
+        "MATH 20B",
+        "PHYS 5A"
+    ],
+    "Biotechnology B.A.": [
+        "BIOL 20A",
+        "BME 18",
+        "BME 5",
+        "BME 80G",
+        "BME 80H",
+        "CHEM 1A",
+        "CSE 20",
+        "ECE 80B",
+        "PHIL 80G",
+        "STAT 5",
+        "STAT 7",
+        "STAT 7L"
+    ],
+    "Business Management Economics B.A.": [
+        "AM 11A",
+        "ECON 1",
+        "ECON 11A",
+        "ECON 2",
+        "MATH 11A",
+        "MATH 19A"
+    ],
+    "Chemistry B.A.": [
+        "AM 30",
+        "CHEM 1A",
+        "CHEM 1B",
+        "CHEM 1C",
+        "MATH 11A",
+        "MATH 11B",
+        "MATH 19A",
+        "MATH 19B",
+        "MATH 22",
+        "MATH 23A"
+    ],
+    "Chemistry B.S.": [
+        "AM 30",
+        "CHEM 1A",
+        "CHEM 1B",
+        "CHEM 1C",
+        "MATH 11A",
+        "MATH 11B",
+        "MATH 19A",
+        "MATH 19B",
+        "MATH 22",
+        "MATH 23A"
+    ],
+    "Classical Studies B.A.": [
+        "GREE 1",
+        "LATN 1"
+    ],
+    "Cognitive Science B.S.": [
+        "AM 11A",
+        "CSE 13S",
+        "CSE 20",
+        "CSE 30",
+        "ECE 13",
+        "ECON 11A",
+        "MATH 11A",
+        "MATH 19A",
+        "MATH 20A",
+        "PSYC 2",
+        "PSYC 20",
+        "STAT 5",
+        "STAT 7",
+        "STAT 7L"
+    ],
+    "Community Studies B.A.": [
+        "CMMU 10"
+    ],
+    "Computer Engineering B.S.": [
+        "AM 10",
+        "AM 20",
+        "AM 30",
+        "CSE 12",
+        "CSE 13S",
+        "CSE 16",
+        "CSE 30",
+        "ECE 13",
+        "MATH 19A",
+        "MATH 19B",
+        "MATH 20A",
+        "MATH 20B",
+        "MATH 21",
+        "MATH 23A",
+        "PHYS 5A",
+        "PHYS 5C",
+        "PHYS 5L",
+        "PHYS 5N"
+    ],
+    "Computer Science B.A.": [
+        "CSE 12",
+        "CSE 13S",
+        "CSE 30",
+        "ECE 13",
+        "MATH 19A",
+        "MATH 19B",
+        "MATH 20A",
+        "MATH 20B"
+    ],
+    "Computer Science B.S.": [
+        "CSE 12",
+        "CSE 13S",
+        "CSE 30",
+        "ECE 13",
+        "MATH 19A",
+        "MATH 19B",
+        "MATH 20A",
+        "MATH 20B"
+    ],
+    "Computer Science: Computer Game Design B.S.": [
+        "CSE 12",
+        "CSE 13S",
+        "CSE 16",
+        "CSE 30",
+        "ECE 13",
+        "MATH 19A",
+        "MATH 20A"
+    ],
+    "Critical Race and Ethnic Studies B.A.": [
+        "CRES 10",
+        "CRES 100",
+        "CRES 101"
+    ],
+    "Earth Sciences B.S.": [
+        "EART 5",
+        "EART 10",
+        "EART 20"
+    ],
+    "Earth Sciences/Anthropology Combined Major B.A.": [
+        "EART 5",
+        "EART 10",
+        "EART 20"
+    ],
+    "Ecology and Evolution B.S.": [
+        "BIOE 20B",
+        "BIOE 20C",
+        "BIOL 20A",
+        "CHEM 1A",
+        "CHEM 1B",
+        "MATH 11A",
+        "MATH 19A"
+    ],
+    "Economics B.A.": [],
+    "Economics/Mathematics Combined B.A.": [],
+    "Education, Democracy, and Justice B.A.": [],
+    "Electrical Engineering B.S.": [],
+    "Environmental Sciences B.S.": [],
+    "Environmental Studies B.A.": [],
+    "Environmental Studies/Biology Combined Major B.A.": [],
+    "Environmental Studies/Earth Sciences Combined Major B.A.": [],
+    "Environmental Studies/Economics Combined Major B.A.": [],
+    "Feminist Studies B.A.": [],
+    "Film and Digital Media B.A.": [],
+    "Global Economics B.A.": [],
+    "History B.A.": [],
+    "History of Art and Visual Culture B.A.": [],
+    "Human Biology B.S.": [],
+    "Jewish Studies B.A.": [],
+    "Language Studies B.A.": [],
+    "Latin American and Latino Studies B.A.": [],
+    "Latin American and Latino Studies/Politics Combined B.A.": [],
+    "Latin American and Latino Studies/Sociology Combined B.A.": [],
+    "Legal Studies B.A.": [],
+    "Linguistics B.A.": [],
+    "Literature B.A.": [],
+    "Marine Biology B.S.": [],
+    "Mathematics B.A.": [],
+    "Mathematics B.S.": [],
+    "Mathematics Education B.A.": [],
+    "Molecular, Cell, and Developmental Biology B.S.": [],
+    "Music B.A.": [],
+    "Music B.M.": [],
+    "Network and Digital Technology B.A.": [],
+    "Neuroscience B.S.": [],
+    "Philosophy B.A.": [],
+    "Physics (Astrophysics) B.S.": [],
+    "Physics B.S.": [],
+    "Plant Sciences B.S.": [],
+    "Politics B.A.": [],
+    "Psychology B.A.": [],
+    "Robotics Engineering B.S.": [],
+    "Science Education B.S.": [],
+    "Sociology B.A.": [],
+    "Spanish Studies B.A.": [],
+    "Technology and Information Management B.S.": [],
+    "Theater Arts B.A.": []
+}
