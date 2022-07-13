@@ -122,6 +122,7 @@
             }
         </style>
         
+        <!-- https://www.w3schools.com/howto/howto_js_filter_lists.asp -->
         <!-- Search Filter List -->
         <input type="text" id="searchIcon" onkeyup="SearchBar()" placeholder="Search for courses.." title="Type in the abbreviation of the course">
 
@@ -138,11 +139,9 @@
 
         <div>
             <!-- List of Majors Client can Follow/Declare -->
-            <ul id="majorList">
-                <button class="button" onclick="CalculateButton()">Calculate Qualified Majors</button>
-                <p class="majorTitle">Majors You Qualify To Declare/Majors You Can Follow:</p>
-                <li>This major</li>
-            </ul>
+            <button class="button" onclick="CalculateButton()">Calculate Qualified Majors</button>
+            <p class="majorTitle">Majors You Qualify To Declare/Majors You Can Follow:</p>
+            <ul id="majorList"></ul>
         </div>
     </body>
 </html>
