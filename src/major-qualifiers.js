@@ -5,29 +5,42 @@ let content_parsed = [];    // will contain an array of courses from the given l
 function CalculateButton() {
     clearContentArray();
 
-    var content = document.getElementById("chosenList").textContent;
+    // var content = document.getElementById("chosenList").textContent;
+    var content = document.getElementById("chosenList").children;
 
-    if(content == "") console.log("N/A");   // if the list is empty, don't calculate anything
-    else parseContent("Hello World");   // if there is at least 1 item in the list, we can calculate
+    if(content.length <= 0) console.log("N/A");   // if the list is empty, don't calculate anything
+    else parseContent(content);   // if there is at least 1 item in the list, we can calculate
     
-    // ReceiveMajorJSON();
+    ReceiveMajorJSON();
 
-    console.log(content_parsed);
+    // console.log(content_parsed);
 }
 
 // Calculates 
+// prop - major title
+// arr[prop] - all courses inside the major title
 let QualifyMajors = function() {
-    for(let prop in major_courseObj) {
-        // if(prop == "course") console.log("this counts as as tring");
-        console.log(prop);
-        console.log(major_courseObj[prop]);
-    };
+    console.log("Inside Qualify Majors");
+    console.log(content_parsed);
+    // for(let prop in major_courseObj) {
+    //     console.log(prop);
+    //     console.log(major_courseObj[prop].length);
+    // };
+    console.log("End of Qualify Majors");
 }
 
 // takes in the given content list from the user and organizes it to access it easier
-function parseContent(lines) {
-    content_parsed.push(lines);
-    console.log(lines);
+// function takes in the children of the content
+function parseContent(children) {
+    console.log("Content Parsed Through");
+    // loads up the content parsed in and saves it
+    var pars = [];
+    for(var i = 0; i < children.length; i++) {
+        pars.push(children[i].textContent);
+        content_parsed.push(children[i].textContent);
+    }
+
+    // content_parsed.push(children);
 }
 
 function ReceiveMajorJSON() {
