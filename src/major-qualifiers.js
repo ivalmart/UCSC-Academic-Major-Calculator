@@ -1,28 +1,34 @@
 let major_courseObj = {};   // will contain the entire json file with each of its contents
 let content_parsed = [];    // will contain an array of courses from the given list of the user
 
-// main function
+// Main Function
 function CalculateButton() {
-    clearContentArray();
-    ClearMajorList();
+    clearContentArray();    // resets the content that was parsed from the user input
+    ClearMajorList();   // resets the list that was calculated previously
 
     var content = document.getElementById("chosenList").children;
 
     if(content.length <= 0) {
         console.log("N/A");   // if the list is empty, don't calculate anything
+        AddMajorToList("N/A");
     } else {
         parseContent(content);   // if there is at least 1 item in the list, we can calculate
         ReceiveMajorJSON();
     }
 }
 
-// Calculates 
+// Compares each user inputted class with each course inside each major to discover what
+// majors the student can qualify for that can help them out with the declaration process
+// or to help provide guidance on what they can pursue with the courses they've taken
 // prop - major title
 // arr[prop] - all courses inside the major title
 let QualifyMajors = function() {
     // 1st loop: goes through each major
     for(let prop in major_courseObj) {
         // 2nd loop: goes through each course in the major
+
+        let major_str = prop;
+
         for(let i = 0; i < major_courseObj[prop].length; i++) {
             // 3rd loop: goes through the list of courses from the user to compare
             let j = 0;
@@ -33,12 +39,17 @@ let QualifyMajors = function() {
                 let result = user_course.localeCompare(course_Comp);
 
                 if(result == 0) {
-                    AddMajorToList(prop);
-                    break;
+                    major_str += " / ";
+                    major_str += course_Comp;
+                    // AddMajorToList(prop);
+                    // break;
                 }
                 j++;
             }
         }
+
+        if(major_str.localeCompare(prop) != 0) AddMajorToList(major_str);
+
     }
 }
 
@@ -54,6 +65,8 @@ function parseContent(children) {
 
 }
 
+// Loads the JSON file that contains all majors with a list of courses attached to them
+// The content of the JSON is async
 function ReceiveMajorJSON() {
 // Helpful: https://www.youtube.com/watch?v=Pb-8DzAObmg for JSON Files
 // Takes in a big string of what the content inside 
@@ -68,10 +81,12 @@ function ReceiveMajorJSON() {
     });
 }
 
+// Clears the content array received and parsed previously with the user input
 function clearContentArray() {
     while(content_parsed.length > 0) content_parsed.pop();
 }
 
+// Adds the major title + it's contents to the Qualified Majors list
 function AddMajorToList(major) {
     var qualified = document.createElement("a");
     qualified.textContent = major;
@@ -82,6 +97,7 @@ function AddMajorToList(major) {
     ul.appendChild(li);
 }
 
+// Clears the list of majors that were previously calculated earlier as to not stack majors from before
 function ClearMajorList() {
     document.getElementById("majorList").innerHTML = "";
 }
