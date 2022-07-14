@@ -22,14 +22,14 @@ function CalculateButton() {
 let QualifyMajors = function() {
     // 1st loop: goes through each major
     for(let prop in major_courseObj) {
-        console.log(prop);
+        // console.log(prop);
         // 2nd loop: goes through each course in the major
         for(let i = 0; i < major_courseObj[prop].length; i++) {
             // 3rd loop: goes through the list of courses from the user to compare
             let j = 0;
             while(j < content_parsed.length) {
                 let course_Comp = major_courseObj[prop][i];
-                let user_course = content_parsed[j].slice(0, -1);
+                let user_course = content_parsed[j];
                 let result = user_course.localeCompare(course_Comp);
 
                 if(result == 0) {
