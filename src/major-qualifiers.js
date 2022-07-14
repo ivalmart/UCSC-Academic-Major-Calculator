@@ -22,14 +22,14 @@ function CalculateButton() {
 let QualifyMajors = function() {
     // 1st loop: goes through each major
     for(let prop in major_courseObj) {
-        // console.log(prop);
         // 2nd loop: goes through each course in the major
         for(let i = 0; i < major_courseObj[prop].length; i++) {
             // 3rd loop: goes through the list of courses from the user to compare
             let j = 0;
             while(j < content_parsed.length) {
                 let course_Comp = major_courseObj[prop][i];
-                let user_course = content_parsed[j];
+                // let user_course = content_parsed[j]; // GitHub Pages server line
+                let user_course = content_parsed[j].slice(0, -1); // local server line
                 let result = user_course.localeCompare(course_Comp);
 
                 if(result == 0) {
@@ -45,7 +45,6 @@ let QualifyMajors = function() {
 // takes in the given content list from the user and organizes it to access it easier
 // function takes in the children of the content
 function parseContent(children) {
-    console.log("Content Parsed Through");
     // loads up the content parsed in and saves it
     var pars = [];
     for(var i = 0; i < children.length; i++) {
@@ -53,7 +52,6 @@ function parseContent(children) {
         content_parsed.push(children[i].textContent);
     }
 
-    // content_parsed.push(children);
 }
 
 function ReceiveMajorJSON() {
@@ -75,7 +73,6 @@ function clearContentArray() {
 }
 
 function AddMajorToList(major) {
-    console.log("ADDING MAJOR" + major);
     var qualified = document.createElement("a");
     qualified.textContent = major;
   

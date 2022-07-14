@@ -22,7 +22,8 @@ function main() {
         // stores all the courses for the website search bar list
         lines.forEach(function(line, i, arr) {
           // splices off some random \r that I have no way of doing but this way
-          arr[i] = line;
+          arr[i] = line; // GitHub Pages server line
+          // arr[i] = lines.slice(0, -1); // local server line
           AddListItem(arr[i], "filterList");
         });
       } else {
