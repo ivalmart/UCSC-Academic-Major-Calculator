@@ -1,9 +1,9 @@
 # UCSC-Academic-Major-Calculator
 A program for UCSC Advisors/Students to calculate what 2022-2023 majors students qualify for given the completed class history.
 
-Input: A list of courses that are assumed to be completed and passed with a good grade from the user in their transcript.
+## Input: A list of courses that are assumed to be completed and passed with a good grade from the user in their transcript.
 
-Output: A list of all majors the user can consider to follow. All majors that are considered "qualified" for the user 
+## Output: A list of all majors the user can consider to follow. All majors that are considered "qualified" for the user 
 are only considering prerequisite courses needed to declare the major. 
 
 Possible Outputs?
@@ -13,7 +13,7 @@ Possible Outputs?
 - Advanced Results: Presenting what majors you qualify for, as well as how many classes you have left in the major
 and how much time you have remaining to declare
 
-Expected User:
+* * Expected User:
 First-time Frost having an Undeclared major or wanting to switch out for something else
 
 Purpose of the Program:

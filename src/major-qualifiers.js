@@ -34,8 +34,8 @@ let QualifyMajors = function() {
             let j = 0;
             while(j < content_parsed.length) {
                 let course_Comp = major_courseObj[major][i];
-                // let user_course = content_parsed[j]; // GitHub Pages server line
-                let user_course = content_parsed[j].slice(0, -1); // local server line
+                let user_course = content_parsed[j]; // GitHub Pages server line
+                // let user_course = content_parsed[j].slice(0, -1); // local server line
                 let result = user_course.localeCompare(course_Comp);
 
                 if(result == 0) {
