@@ -1,15 +1,4 @@
-
 function main() {
-  // A dictionary with each major as a key assigned a value of courses that are a part of the declaration process
-  // [Key = Major, Value = All possible courses needed to declare]
-  // https://pietschsoft.com/post/2015/09/05/javascript-basics-how-to-create-a-dictionary-with-keyvalue-pairs
-  // https://stackoverflow.com/questions/7196212/how-to-create-dictionary-and-add-key-value-pairs-dynamically
-  // course_Dict = [];
-  course_Dict = [];
-
-  // A list of all courses in UCSC that are a part of any major declaration process
-  var possible_Courses = {};
-
   // Help from:
   // https://stackoverflow.com/questions/13574930/how-to-load-a-text-file-in-javascript
   var req = new XMLHttpRequest();
@@ -29,13 +18,12 @@ function main() {
       } else {
         // (something went wrong with the request)
       }
-      course_Dict = Array.from(lines);
     }
   }
   req.send();
 }    
 
-
+// Creates an element in given list to format the style and add button functionality
 function AddListItem(item, typeOfList) {
   var a = document.createElement("a");
   a.setAttribute('href', '#');
@@ -54,7 +42,7 @@ function AddListItem(item, typeOfList) {
   ul.appendChild(li);
 }
 
-
+// Searches the title of what the user has typed into the search bar and provides all closeby results
 // https://www.w3schools.com/howto/howto_js_filter_lists.asp
 function SearchBar() {
   // Declare variables

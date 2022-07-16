@@ -2,13 +2,20 @@ div {
     padding-top: 375px;
 }
 
+h1 {
+    text-align: center;
+    font-style: oblique;
+    font-size: 200%;
+}
+
 /* https://www.w3schools.com/css/tryit.asp?filename=trycss_buttons_basic */
 .button {
-    background-color: #4CAF50; /* Green */
+    background-color: #0e6e16; /* Green */
     color: white;
     padding: 10px 30px;
     text-align: center;
     text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
@@ -16,11 +23,17 @@ div {
 
 .majorTitle {
     font-size: 20px;
-    color: white;
+    font-weight: bold;
+    color: #fbceb1;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
 }
 
 .chosenTitle {
-    font-size: 18px;
-    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    color: #FF4500;
     text-align: center;
 }
+

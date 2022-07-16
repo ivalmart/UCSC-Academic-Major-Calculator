@@ -20,20 +20,20 @@ function CalculateButton() {
 // Compares each user inputted class with each course inside each major to discover what
 // majors the student can qualify for that can help them out with the declaration process
 // or to help provide guidance on what they can pursue with the courses they've taken
-// prop - major title
-// arr[prop] - all courses inside the major title
+// major - major title
+// arr[major] - all courses inside the major title
 let QualifyMajors = function() {
     // 1st loop: goes through each major
-    for(let prop in major_courseObj) {
+    for(let major in major_courseObj) {
         // 2nd loop: goes through each course in the major
 
-        let major_str = prop;
+        let major_str = major;
 
-        for(let i = 0; i < major_courseObj[prop].length; i++) {
+        for(let i = 0; i < major_courseObj[major].length; i++) {
             // 3rd loop: goes through the list of courses from the user to compare
             let j = 0;
             while(j < content_parsed.length) {
-                let course_Comp = major_courseObj[prop][i];
+                let course_Comp = major_courseObj[major][i];
                 // let user_course = content_parsed[j]; // GitHub Pages server line
                 let user_course = content_parsed[j].slice(0, -1); // local server line
                 let result = user_course.localeCompare(course_Comp);
@@ -41,14 +41,12 @@ let QualifyMajors = function() {
                 if(result == 0) {
                     major_str += " / ";
                     major_str += course_Comp;
-                    // AddMajorToList(prop);
-                    // break;
                 }
                 j++;
             }
         }
 
-        if(major_str.localeCompare(prop) != 0) AddMajorToList(major_str);
+        if(major_str.localeCompare(major) != 0) AddMajorToList(major_str);
 
     }
 }

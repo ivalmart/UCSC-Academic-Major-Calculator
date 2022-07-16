@@ -11,7 +11,9 @@
         <script src="./src/major-qualifiers.js"></script>
 
     </head>
+
     <body onload="main()">
+        <!-- Description w/ Instructions -->
         <h1>UCSC 2021-2022 Academic Major Calculator</h1>
         <p>
             A program for UCSC Advisors/Students to calculate what 2021-2022 majors students qualify for given the completed class history.
@@ -21,7 +23,7 @@
 
         <style>
             img.background {
-                position: absolute;
+                position: fixed;
                 left: 0px;
                 top: 0px;
                 z-index: -1;
@@ -31,7 +33,6 @@
                 filter: blur(5px);
             }
 
-            
             /* https://stackoverflow.com/questions/21998679/css-how-to-make-scrollable-list */
             /* https://stackoverflow.com/questions/26322715/two-nav-elements-in-css */
             nav[role="filtered"] ul{height:400px; width:50%;}
@@ -61,6 +62,7 @@
                 margin-bottom: 12px; /* Add some space below the input */
             }
 
+            /* List of All Courses */
             #filterList {
                 /* Remove default list styling */
                 list-style-type: none;
@@ -92,6 +94,7 @@
                 color: #FFE552;
             }
 
+            /* User Given List */
             #chosenList {
                 list-style-type: none;
                 padding-left: 10%;
@@ -118,6 +121,17 @@
                 background-color: #FFE552; /* Add a hover effect to all links, except for headers */
                 color: #72CDF4;
             }
+
+            /* List of Majors Student Qualifies For */
+            #majorList {
+                font-size: 20px;
+                font-weight: bold;
+                margin-top: -10px;
+                font-style: italic;
+                background-color: #FFB511;
+                color: #0c0385;
+                list-style-type:square;
+            }
         </style>
         
         <!-- https://www.w3schools.com/howto/howto_js_filter_lists.asp -->
@@ -130,7 +144,7 @@
 
         <!-- Chosen List -->
         <nav role="chose">
-            <p class="chosenTitle">Courses You Have Chosen/Courses You Have Completed:</p>
+            <p class="chosenTitle"><u>Courses You Have Chosen/Courses You Have Completed:</u></p>
             <!-- KEEP THIS COMPLETELY EMPTY, IT'S THE EDGE CASE WHERE IF THERE IS NOTHING IN THE LIST -->
             <ul id="chosenList"></ul>
         </nav>
@@ -138,7 +152,7 @@
         <div>
             <!-- List of Majors Client can Follow/Declare -->
             <button class="button" onclick="CalculateButton()">Calculate Qualified Majors</button>
-            <p class="majorTitle">Majors You Qualify To Declare/Majors You Can Follow:</p>
+            <p class="majorTitle"><u>Majors You Qualify To Declare/Majors You Can Follow:</u></p>
             <ul id="majorList"></ul>
         </div>
     </body>
