@@ -8,6 +8,14 @@ h1 {
     font-size: 200%;
 }
 
+h2 {
+    background-color: #32a852;
+    font-size: 18px;
+    padding-top: 1px;
+    padding-left: 15px;
+    border-style: solid ;
+}
+
 /* https://www.w3schools.com/css/tryit.asp?filename=trycss_buttons_basic */
 .button {
     background-color: #0e6e16; /* Green */
@@ -37,3 +45,14 @@ h1 {
     text-align: center;
 }
 
+.description {
+    font-style: italic;
+    font-size: 16px;
+    margin-top: -10px;
+    margin-left: 20px;
+}
+
+.notes {
+    background-color: #b02561;
+    border-style: dashed;
+}

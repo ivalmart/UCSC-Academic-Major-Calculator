@@ -14,10 +14,24 @@
 
     <body onload="main()">
         <!-- Description w/ Instructions -->
-        <h1>UCSC 2021-2022 Academic Major Calculator</h1>
-        <p>
-            A program for UCSC Advisors/Students to calculate what 2021-2022 majors students qualify for given the completed class history.
-        </p>
+        <h1><u>UCSC 2022-2023 Academic Major Calculator</u></h1>
+        <h2>
+            <p>
+                A program for UCSC Advisors/Students to calculate what 2022-2023 majors students qualify for given the completed class history.
+            </p>
+            <p><u>How to Use the Program:</u></p>
+            <p class="description">
+                > Search Up/Scroll through the list of all UCSC courses<br>
+                > Select courses that you have previously completed AND passed with a satisfactory grade<br>
+                > Once the courses have been chosen, click on "Calculate Qualified Majors"<br>
+            </p>
+            <p><u>Qualified Majors:</u></p>
+            <p class="description">
+                > Creates a list of all majors you can consider. Each major will have a class list following the title 
+                to show what courses in the list you chose lined up with the major. All majors that are considered "qualified" for you 
+                are only considering prerequisite courses needed to declare the major.
+            </p>
+        </h2>
 
         <img class="background" src="./data/background.jpg" alt="rcc">
 
@@ -48,7 +62,7 @@
             ul {
                 float: left;
             }   
-            
+
             #searchIcon {
                 background-image: url('./data/slugicon.png'); /*Add a search icon to input */
                 background-position: 1px 2px; /* Position the search icon */
