@@ -26,7 +26,7 @@ function main() {
 // Creates an element in given list to format the style and add button functionality
 function AddListItem(item, typeOfList) {
   var a = document.createElement("a");
-  a.setAttribute('href', '#');
+  a.style.cursor = "pointer";
   a.textContent = item;
 
   var ul = document.getElementById(typeOfList);
