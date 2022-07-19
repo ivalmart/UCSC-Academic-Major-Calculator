@@ -37,3 +37,24 @@ needed in the major declaration process.
 > Example: A 3/5 on the AP Calculus AB test is equivalent to Applied Mathematics 3 and Mathematics 3 (AM 3, MATH 3)
 
 **Created By:** Ivan Martinez-Arias
+
+## Format of the JSON File to Update:
+{
+    "the title of the major": {
+        "all the courses needed to declare the major": [
+            "course 1",
+            "course 2",
+            ""....
+        ],
+        "the stylized version of the courses depending on if there are any classes that mention they can take 1 of 3 or if they need to take all 3 (difference between X or Y or Z / X and Y and Z)": [
+            "course 1",
+            "course 2",
+            ""....
+        ],
+        "the grading policy for the prerequisite courses": [
+            "grade or better"
+        ]
+    }
+}
+
+### Note: Each course should be written down in the JSON as its abbreviation, Ex./ ANTH 2, MATH 11A, HIS 15, ...

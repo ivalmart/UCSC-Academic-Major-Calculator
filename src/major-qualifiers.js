@@ -1,5 +1,6 @@
-let major_courseObj = {};   // will contain the entire json file with each of its contents
+let major_courseObj = {};   // will contain the entire json file with each of its contents, UNTOUCHED
 let content_parsed = [];    // will contain an array of courses from the given list of the user
+let calculated_majorObj = [];   // will contain the results to print out cleanly on the page
 
 // Main Function
 function CalculateButton() {
@@ -25,26 +26,41 @@ function CalculateButton() {
 let QualifyMajors = function() {
     // 1st loop: goes through each major
     for(let major in major_courseObj) {
+        // console.log(major);
+        // console.log(major_courseObj[major]);
+        // console.log(major_courseObj[major]["all-courses"]);
+        // console.log(major_courseObj[major]["print"]);
+
+        // break;
+
+
+        // OLD CODE
         // 2nd loop: goes through each course in the major
 
         let major_str = major;
+
+        // let list_of_courses = [];
 
         for(let i = 0; i < major_courseObj[major].length; i++) {
             // 3rd loop: goes through the list of courses from the user to compare
             let j = 0;
             while(j < content_parsed.length) {
                 let course_Comp = major_courseObj[major][i];
-                let user_course = content_parsed[j]; // GitHub Pages server line
-                // let user_course = content_parsed[j].slice(0, -1); // local server line
+                // let user_course = content_parsed[j]; // GitHub Pages server line
+                let user_course = content_parsed[j].slice(0, -1); // local server line
                 let result = user_course.localeCompare(course_Comp);
 
                 if(result == 0) {
                     major_str += " / ";
                     major_str += course_Comp;
+                    // list_of_courses.push(course_Comp);
                 }
                 j++;
             }
         }
+
+        // calculated_majorObj[major] = list_of_courses;
+        // console.log(calculated_majorObj[major]);
 
         if(major_str.localeCompare(major) != 0) AddMajorToList(major_str);
 
@@ -86,6 +102,8 @@ function clearContentArray() {
 
 // Adds the major title + it's contents to the Qualified Majors list
 function AddMajorToList(major) {
+    // UPDATE: Add a sub-list of items to print out for each major
+    // https://www.freecodecamp.org/news/html-bullet-points-how-to-create-an-unordered-list-with-the-ul-tag-example/
     var qualified = document.createElement("a");
     qualified.textContent = major;
   
