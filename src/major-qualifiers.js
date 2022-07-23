@@ -41,13 +41,13 @@ let QualifyMajors = function() {
 
         // let list_of_courses = [];
 
-        for(let i = 0; i < major_courseObj[major].length; i++) {
+        for(let i = 0; i < major_courseObj[major]["all-courses"].length; i++) {
             // 3rd loop: goes through the list of courses from the user to compare
             let j = 0;
             while(j < content_parsed.length) {
-                let course_Comp = major_courseObj[major][i];
-                // let user_course = content_parsed[j]; // GitHub Pages server line
-                let user_course = content_parsed[j].slice(0, -1); // local server line
+                let course_Comp = major_courseObj[major]["all-courses"][i];
+                let user_course = content_parsed[j]; // GitHub Pages server line
+                // let user_course = content_parsed[j].slice(0, -1); // local server line
                 let result = user_course.localeCompare(course_Comp);
 
                 if(result == 0) {
@@ -85,7 +85,7 @@ function ReceiveMajorJSON() {
 // Helpful: https://www.youtube.com/watch?v=Pb-8DzAObmg for JSON Files
 // Takes in a big string of what the content inside 
 // function is async, final promise of the last function is not returned, there is nothing in the variables saved
-    fetch("./data/majors.json")
+    fetch("./data/2022-2023-majors.json")
     .then(function(resp) {
         return resp.json();
     })
@@ -103,9 +103,17 @@ function clearContentArray() {
 // Adds the major title + it's contents to the Qualified Majors list
 function AddMajorToList(major) {
     // UPDATE: Add a sub-list of items to print out for each major
-    // https://www.freecodecamp.org/news/html-bullet-points-how-to-create-an-unordered-list-with-the-ul-tag-example/
+    // https://www.freecodecamp.org/news/html-bullet-points-how-to-create-an-unordered-list-with-the-ul-tag-example/    
+    // Creates the text element to show the user what major they qualify for
     var qualified = document.createElement("a");
     qualified.textContent = major;
+    qualified.className = "tooltip";
+    // Creates the text when hovering the major on what other material they needs for prerequisites
+    var span = document.createElement("span");
+    span.setAttribute('class', 'tooltiptext');
+    // Adds the text inside the hoverable text to show the user the extra content
+    span.innerHTML = "Hello World!\nThis indeed works";
+    qualified.appendChild(span);
   
     var ul = document.getElementById("majorList");
     var li = document.createElement("li");
