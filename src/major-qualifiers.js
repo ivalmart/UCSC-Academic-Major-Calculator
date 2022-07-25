@@ -39,30 +39,30 @@ let QualifyMajors = function() {
 
         let major_str = major;
 
-        // let list_of_courses = [];
+        let list_of_courses = [];
 
         for(let i = 0; i < major_courseObj[major]["all-courses"].length; i++) {
             // 3rd loop: goes through the list of courses from the user to compare
             let j = 0;
             while(j < content_parsed.length) {
                 let course_Comp = major_courseObj[major]["all-courses"][i];
-                let user_course = content_parsed[j]; // GitHub Pages server line
-                // let user_course = content_parsed[j].slice(0, -1); // local server line
+                let user_course = content_parsed[j]; // GitHub Pages server line?
+                // let user_course = content_parsed[j].slice(0, -1); // local ser?ver line
                 let result = user_course.localeCompare(course_Comp);
 
                 if(result == 0) {
                     major_str += " / ";
                     major_str += course_Comp;
-                    // list_of_courses.push(course_Comp);
+                    list_of_courses.push(course_Comp);
                 }
                 j++;
             }
         }
 
-        // calculated_majorObj[major] = list_of_courses;
+        calculated_majorObj[major] = list_of_courses;
         // console.log(calculated_majorObj[major]);
 
-        if(major_str.localeCompare(major) != 0) AddMajorToList(major_str);
+        if(major_str.localeCompare(major) != 0) AddMajorToList(major);
 
     }
 }
@@ -102,18 +102,31 @@ function clearContentArray() {
 
 // Adds the major title + it's contents to the Qualified Majors list
 function AddMajorToList(major) {
-    // UPDATE: Add a sub-list of items to print out for each major
     // https://www.freecodecamp.org/news/html-bullet-points-how-to-create-an-unordered-list-with-the-ul-tag-example/    
     // Creates the text element to show the user what major they qualify for
     var qualified = document.createElement("a");
     qualified.textContent = major;
-    qualified.className = "tooltip";
-    // Creates the text when hovering the major on what other material they needs for prerequisites
-    var span = document.createElement("span");
-    span.setAttribute('class', 'tooltiptext');
-    // Adds the text inside the hoverable text to show the user the extra content
-    span.innerHTML = "Hello World!\nThis indeed works";
-    qualified.appendChild(span);
+
+    // if the class list is empty (N/A), do not enter this. if it is not, format the major
+    if(major != "N/A") {
+        qualified.className = "tooltip";
+        // Creates the text when hovering the major on what other material they needs for prerequisites
+        var span = document.createElement("span");
+        span.setAttribute('class', 'tooltiptext');
+        // Adds the text inside the hoverable text to show the user the extra content
+        span.innerHTML = "Prerequisites to Declare:<br>";
+        for(let i = 0; i < major_courseObj[major]["print"].length; i++) {
+            span.innerHTML += '* ' + major_courseObj[major]["print"][i] + '<br>';
+        }
+
+        // Adds some space for the grading policy
+        span.innerHTML += "<br>" + "Grading Policy:<br>";
+
+        for(let i = 0; i < major_courseObj[major]["grading"].length; i++) {
+            span.innerHTML += major_courseObj[major]["grading"][i] + '<br>';
+        }
+        qualified.appendChild(span);
+    }
   
     var ul = document.getElementById("majorList");
     var li = document.createElement("li");

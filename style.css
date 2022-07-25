@@ -2,12 +2,14 @@ div {
     padding-top: 375px;
 }
 
+/* Title */
 h1 {
     text-align: center;
     font-style: oblique;
     font-size: 200%;
 }
 
+/* Top Paragraphs and Information */
 h2 {
     background-color: #32a852;
     font-size: 18px;
@@ -16,6 +18,7 @@ h2 {
 }
 
 /* https://www.w3schools.com/css/tryit.asp?filename=trycss_buttons_basic */
+/* Style of the Button */
 .button {
     background-color: #0e6e16; /* Green */
     color: white;
@@ -28,6 +31,7 @@ h2 {
     cursor: pointer;
 }
 
+/* Style of the list for the majors shown to qualify */
 .majorTitle {
     font-size: 20px;
     font-weight: bold;
@@ -35,6 +39,7 @@ h2 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
 }
 
+/* Style of the list of classes the student has chosen */
 .chosenTitle {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
     font-size: 20px;
@@ -44,6 +49,7 @@ h2 {
     text-align: center;
 }
 
+/* Green Box for description of text */
 .description {
     font-style: italic;
     font-size: 16px;
@@ -51,6 +57,7 @@ h2 {
     margin-left: 20px;
 }
 
+/* Red Box for specifics on what is needed to be aware of */
 .notes {
     background-color: #b02561;
     border-style: dashed;
@@ -62,6 +69,7 @@ h2 {
     padding-left: 15px;
 }
 
+/* Style for the text pop-up on top of the majors listed */
 .tooltip {
     position: relative;
     display: inline-block;
@@ -81,7 +89,7 @@ h2 {
     /* Position the tooltip */
     position: absolute;
     z-index: 1;
-    top: -5px;
+    top: -75px;
     left: 105%;
 }
 
