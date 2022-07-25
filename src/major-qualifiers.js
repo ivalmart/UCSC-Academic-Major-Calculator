@@ -26,15 +26,6 @@ function CalculateButton() {
 let QualifyMajors = function() {
     // 1st loop: goes through each major
     for(let major in major_courseObj) {
-        // console.log(major);
-        // console.log(major_courseObj[major]);
-        // console.log(major_courseObj[major]["all-courses"]);
-        // console.log(major_courseObj[major]["print"]);
-
-        // break;
-
-
-        // OLD CODE
         // 2nd loop: goes through each course in the major
 
         let major_str = major;
@@ -59,9 +50,7 @@ let QualifyMajors = function() {
             }
         }
 
-        calculated_majorObj[major] = list_of_courses;
-        // console.log(calculated_majorObj[major]);
-
+        calculated_majorObj[major] = list_of_courses;   // stores the local variable of courses equivalent to a global var
         if(major_str.localeCompare(major) != 0) AddMajorToList(major);
 
     }
@@ -76,7 +65,6 @@ function parseContent(children) {
         pars.push(children[i].textContent);
         content_parsed.push(children[i].textContent);
     }
-
 }
 
 // Loads the JSON file that contains all majors with a list of courses attached to them
@@ -109,12 +97,16 @@ function AddMajorToList(major) {
 
     // if the class list is empty (N/A), do not enter this. if it is not, format the major
     if(major != "N/A") {
+        // Info that helped me
+        // https://stackoverflow.com/questions/14094697/how-to-create-new-div-dynamically-change-it-move-it-modify-it-in-every-way-po
+        // https://www.freecodecamp.org/news/span-html-how-to-use-the-span-tag-with-css/
         qualified.className = "tooltip";
         // Creates the text when hovering the major on what other material they needs for prerequisites
         var span = document.createElement("span");
         span.setAttribute('class', 'tooltiptext');
         // Adds the text inside the hoverable text to show the user the extra content
-        span.innerHTML = "Prerequisites to Declare:<br>";
+        span.innerHTML = major + '<br><br>';    // title of the major
+        span.innerHTML += "Prerequisites to Declare:<br>";  // format
         for(let i = 0; i < major_courseObj[major]["print"].length; i++) {
             span.innerHTML += '* ' + major_courseObj[major]["print"][i] + '<br>';
         }
@@ -126,6 +118,14 @@ function AddMajorToList(major) {
             span.innerHTML += major_courseObj[major]["grading"][i] + '<br>';
         }
         qualified.appendChild(span);
+
+        var notes = document.createElement("span");
+        notes.setAttribute('class', 'completetiptext');
+        notes.innerHTML = "Courses Completed Equivalent to Major:<br>";
+        for(let i = 0; i < calculated_majorObj[major].length; i++) {
+            notes.innerHTML += calculated_majorObj[major][i] + '<br>';
+        }
+        qualified.appendChild(notes);
     }
   
     var ul = document.getElementById("majorList");

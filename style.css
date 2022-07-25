@@ -70,6 +70,7 @@ h2 {
 }
 
 /* Style for the text pop-up on top of the majors listed */
+/* https://www.w3schools.com/css/css_tooltip.asp#:~:text=HTML%3A%20Use%20a%20container%20element,with%20class%3D%22tooltiptext%22%20. */
 .tooltip {
     position: relative;
     display: inline-block;
@@ -90,9 +91,30 @@ h2 {
     position: absolute;
     z-index: 1;
     top: -75px;
-    left: 105%;
+    left: 200px;
 }
 
 .tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* Extra box to show all the classes the student completed */  
+.tooltip .completetiptext {
+    visibility: hidden;
+    width: 150px;
+    background-color: red;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 2px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    left: 500px;
+}
+
+.tooltip:hover .completetiptext {
     visibility: visible;
 }
