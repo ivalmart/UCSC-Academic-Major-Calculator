@@ -5,13 +5,6 @@ A program for UCSC Advisors/Students to calculate what 2022-2023 majors students
 
 ### Output: A list of all majors the user can consider to follow. All majors that are considered "qualified" for the user are only considering prerequisite courses needed to declare the major. 
 
-Possible Outputs?
-- Each Major show with a count of classes they need to take (ex./ completed 9/18 courses in major)
-- Each major show with all the classes that are used to qualify for it
-- Example:/ Biology B.S.: CHEM 1A, PHYS 5A
-- Advanced Results: Presenting what majors you qualify for, as well as how many classes you have left in the major
-and how much time you have remaining to declare
-
 **Expected User:**
 First-time Frost having an Undeclared major or wanting to switch out for something else
 
@@ -39,22 +32,38 @@ needed in the major declaration process.
 **Created By:** Ivan Martinez-Arias
 
 ## Format of the JSON File to Update:
-{
-    "the title of the major": {
-        "all the courses needed to declare the major": [
-            "course 1",
-            "course 2",
-            ""....
-        ],
-        "the stylized version of the courses depending on if there are any classes that mention they can take 1 of 3 or if they need to take all 3 (difference between X or Y or Z / X and Y and Z)": [
-            "course 1",
-            "course 2",
-            ""....
-        ],
-        "the grading policy for the prerequisite courses": [
-            "grade or better"
-        ]
-    }
-}
+{<br>
+   "the title of the major": {<br>
+      "all the courses needed to declare the major": [<br>
+         "course 1",<br>
+         "course 2",<br>
+         ""....<br>
+      ],<br>
+      "the stylized version of the courses depending on if there are any classes that mention they can take 1 of 3 or if they need to take all 3 (difference between X or Y or Z / X and Y and Z)": [<br>
+         "course 1",<br>
+         "course 2",<br>
+         ""....<br>
+      ],<br>
+      "the grading policy for the prerequisite courses": [<br>
+         "grade or better"<br>
+      ]<br>
+   }<br>
+}<br>
 
 ### Note: Each course should be written down in the JSON as its abbreviation, Ex./ ANTH 2, MATH 11A, HIS 15, ...
+
+# notes for myself:
+- how to unselect classes information
+- maybe add a button next to the major calculator button to wipe the courses chosen list easily 'clear chosen class selection'
+- talk to Diana about the UCSC website formatting for publishing reasons
+
+# Possible Future Additions:
+- add more specific information about a major on if it requires classes or if it recommends classes (majors that say they can declare whenever but is recommended/ideal to take some class)
+- possibly add every single class in UCSC? (probably not)
+- add more than just prerequisites? maybe add the whole major? (probably not)
+- add specifically grading policies that say that some classes need some grades while others allow for differnt things
+- add when the major must be declared (either by 5th or 6th quarter, etc.)
+
+# feedback
+- possibly make links for all the shown majors to the general catalog
+- BSOE pre-major stuff, where you cannot pursue if you are not proposed

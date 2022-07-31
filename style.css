@@ -11,7 +11,8 @@ h1 {
 
 /* Top Paragraphs and Information */
 h2 {
-    background-color: #32a852;
+    /* background-image: url('./data/background.jpg'); */
+    background-color: #59ffa9;
     font-size: 18px;
     padding-left: 15px;
     border-style: solid ;
@@ -20,7 +21,7 @@ h2 {
 /* https://www.w3schools.com/css/tryit.asp?filename=trycss_buttons_basic */
 /* Style of the Button */
 .button {
-    background-color: #0e6e16; /* Green */
+    background-color: #960000; /* Red */
     color: white;
     padding: 10px 30px;
     text-align: center;
@@ -59,7 +60,7 @@ h2 {
 
 /* Red Box for specifics on what is needed to be aware of */
 .notes {
-    background-color: #b02561;
+    background-color: #2fe1ed;
     border-style: dashed;
     margin-right: 10px;
     font-size: 14px;
@@ -80,7 +81,7 @@ h2 {
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 300px;
-    background-color: black;
+    background-color: #38296b;
     color: #fff;
     font-size: 14px;
     text-align: center;
@@ -91,7 +92,7 @@ h2 {
     position: absolute;
     z-index: 1;
     top: -75px;
-    left: 200px;
+    left: 500px;
 }
 
 .tooltip:hover .tooltiptext {
@@ -102,7 +103,7 @@ h2 {
 .tooltip .completetiptext {
     visibility: hidden;
     width: 150px;
-    background-color: red;
+    background-color: #960000;
     color: #fff;
     font-size: 12px;
     text-align: center;
@@ -112,7 +113,7 @@ h2 {
     /* Position the tooltip */
     position: absolute;
     z-index: 1;
-    left: 500px;
+    left: 800px;
 }
 
 .tooltip:hover .completetiptext {

@@ -38,7 +38,7 @@ let QualifyMajors = function() {
             while(j < content_parsed.length) {
                 let course_Comp = major_courseObj[major]["all-courses"][i];
                 let user_course = content_parsed[j]; // GitHub Pages server line?
-                // let user_course = content_parsed[j].slice(0, -1); // local ser?ver line
+                // let user_course = content_parsed[j].slice(0, -1); // local server line
                 let result = user_course.localeCompare(course_Comp);
 
                 if(result == 0) {
@@ -121,7 +121,7 @@ function AddMajorToList(major) {
 
         var notes = document.createElement("span");
         notes.setAttribute('class', 'completetiptext');
-        notes.innerHTML = "Courses Completed Equivalent to Major:<br>";
+        notes.innerHTML = "Courses Completed Relevant to Major:<br>";
         for(let i = 0; i < calculated_majorObj[major].length; i++) {
             notes.innerHTML += calculated_majorObj[major][i] + '<br>';
         }
