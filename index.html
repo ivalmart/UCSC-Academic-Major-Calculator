@@ -17,28 +17,30 @@
         <h1><u>UCSC 2022-2023 Academic Major Calculator</u></h1>
         <h2>
             <p>
-                A program for UCSC Advisors/Students to calculate what 2022-2023 majors students qualify for given the completed class history.
+                A program for UCSC Advisors/Students to calculate what 2022-2023 majors students may consider/pursue given the completed class history.
             </p>
             <p><u>How to Use the Program:</u></p>
             <p class="description">
-                > Search Up/Scroll through the list of all UCSC courses<br>
-                > Select courses that you have previously completed AND passed with a satisfactory grade (Check your major department to see what is considered a satisfactory grade)<br>
-                > Once the courses have been chosen, click on "Calculate Qualified Majors"<br>
+                1.) Search Up/Scroll through the list of all UCSC courses to the left.<br>
+                2.) Select courses that you have previously completed AND passed with a satisfactory grade (Check your major department to see what is considered a satisfactory grade).<br>
+                3.) Once the courses have been chosen, click on "Calculate Qualified Majors".<br>
             </p>
             <p><u>Qualified Majors:</u></p>
             <p class="description">
-                > Creates a list of all majors you can consider. After each major title, there will be a list of classes
-                that represent what courses you completed lined up with the major.<br>
+                > Creates a list of all majors you can consider. You may hover over the major's title to view the major's
+                 prerequisites, as well as the grading policy. To the right of the box will present all the courses
+                 that are equivalent to the major with the courses you inputted in.<br>
                 <u>Note:</u> All majors that are considered "qualified" for you are only considering prerequisite courses needed to declare 
                 the major.
             </p>
             <p class="notes">
                 <u>Things to Be Aware About:</u><br>
-                * The data is only based off of MAJORS, not MINORS<br>
-                * Only classes that are a part of any major declaration/prerequisites will be a part of the program<br>
-                * Data is all collected from the UCSC General Catalog and each individual Major Departments<br>
-                * Any external scores or courses will NOT be included here (transfer credits, AP/IB), you must find what is equivalent<br>
-                * Concentrations on Majors will be generalized for what is required unless specified differently<br>
+                * Each course you choose will be considered a course you passed WITH a satisfactory grade.<br>
+                * The data is only based off of MAJORS, not MINORS.<br>
+                * Every course at UCSC will NOT be present, only classes that are a part of any major declaration/prerequisites will be a part of the program.<br>
+                * Data is all collected from the UCSC General Catalog and each individual Major Departments.<br>
+                * Any external scores or courses will NOT be included here (transfer credits, AP/IB), you must research what is equivalent.<br>
+                * Concentrations on Majors will be generalized for what is required unless specified differently.<br>
             </p>
         </h2>
 
@@ -167,7 +169,7 @@
 
         <!-- Chosen List -->
         <nav role="chose">
-            <p class="chosenTitle"><u>Courses You Have Chosen/Courses You Have Completed:</u></p>
+            <p class="chosenTitle"><u>Chosen Courses/Completed Courses:</u></p>
             <!-- KEEP THIS COMPLETELY EMPTY, IT'S THE EDGE CASE WHERE IF THERE IS NOTHING IN THE LIST -->
             <ul id="chosenList"></ul>
         </nav>
@@ -175,6 +177,7 @@
         <div>
             <!-- List of Majors Client can Follow/Declare -->
             <button class="button" onclick="CalculateButton()">Calculate Qualified Majors</button>
+            <button class="button" onclick="CalculateButton()">Clear Chosen List</button>
             <p class="majorTitle"><u>Majors You Qualify To Pursue w/ the Course Load Inputted:</u></p>
             <ul id="majorList"></ul>
         </div>
