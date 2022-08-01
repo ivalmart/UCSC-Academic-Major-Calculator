@@ -138,3 +138,8 @@ function AddMajorToList(major) {
 function ClearMajorList() {
     document.getElementById("majorList").innerHTML = "";
 }
+
+// Clears the list that the user chose
+function ClearChosenList() {
+    document.getElementById("chosenList").innerHTML = "";
+}

@@ -32,6 +32,19 @@ h2 {
     cursor: pointer;
 }
 
+/* Style of the Button */
+.cleared {
+    background-color: #f0b01d; /* Yellow */
+    color: black;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
 /* Style of the list for the majors shown to qualify */
 .majorTitle {
     font-size: 20px;
