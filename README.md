@@ -33,21 +33,21 @@ needed in the major declaration process.
 
 ## Format of the JSON File to Update:
 {<br>
-   "the title of the major": {<br>
-      "all the courses needed to declare the major": [<br>
-         "course 1",<br>
-         "course 2",<br>
-         ""....<br>
-      ],<br>
-      "the stylized version of the courses depending on if there are any classes that mention they can take 1 of 3 or if they need to take all 3 (difference between X or Y or Z / X and Y and Z)": [<br>
-         "course 1",<br>
-         "course 2",<br>
-         ""....<br>
-      ],<br>
-      "the grading policy for the prerequisite courses": [<br>
-         "grade or better"<br>
-      ]<br>
-   }<br>
+&emsp; "the title of the major": {<br>
+&emsp;&emsp; "all the courses needed to declare the major": [<br>
+&emsp;&emsp;&emsp; "course 1",<br>
+&emsp;&emsp;&emsp; "course 2",<br>
+&emsp;&emsp;&emsp; ""....<br>
+&emsp;&emsp; ],<br>
+&emsp;&emsp; "the stylized version of the courses depending on if there are any classes that mention they can take 1 of 3 or if they need to take all 3 (difference between X or Y or Z / X and Y and Z)": [<br>
+&emsp;&emsp;&emsp; "course 1",<br>
+&emsp;&emsp;&emsp; "course 2",<br>
+&emsp;&emsp;&emsp; ""....<br>
+&emsp;&emsp;&emsp; ],<br>
+&emsp;&emsp; "the grading policy for the prerequisite courses": [<br>
+&emsp;&emsp;&emsp; "grade or better"<br>
+&emsp;&emsp; ]<br>
+&emsp; }<br>
 }<br>
 
 ### Note: Each course should be written down in the JSON as its abbreviation, Ex./ ANTH 2, MATH 11A, HIS 15, ...
