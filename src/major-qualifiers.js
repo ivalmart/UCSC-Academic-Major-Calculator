@@ -141,5 +141,11 @@ function ClearMajorList() {
 
 // Clears the list that the user chose
 function ClearChosenList() {
+    var cList = document.getElementById("chosenList");
+    var elements = cList.getElementsByTagName('li');
+    for(var i = 0; i < elements.length; i++) {
+        AddListItem(elements.textContent, "filterList");
+    }
+
     document.getElementById("chosenList").innerHTML = "";
 }
