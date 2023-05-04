@@ -143,8 +143,9 @@ function ClearMajorList() {
 function ClearChosenList() {
     var cList = document.getElementById("chosenList");
     var elements = cList.getElementsByTagName('li');
+    console.log(elements);
     for(var i = 0; i < elements.length; i++) {
-        AddListItem(elements.textContent, "filterList");
+        AddListItem(elements[i].textContent, "filterList");
     }
 
     document.getElementById("chosenList").innerHTML = "";
